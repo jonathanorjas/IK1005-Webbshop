@@ -21,6 +21,17 @@ article, aside, details, figcaption, figure, footer, header,
 hgroup, menu, nav, section, main {
 display: block;
 }
+
+/*Container för webbplats*/
+.container{
+	margin:0 auto;
+	max-width: 1200px;
+	min-height: 940px; 
+	overflow: auto;
+	background-color: #33aaff;
+}
+
+//!!!!!!!ALLT ANNNAT
 body {
 line-height: 1;
 }
@@ -146,14 +157,7 @@ h3{
 	margin-right:15px;
 	float:right;
 }
-/*Container för webbplats*/
-.container{
-	margin:0 auto;
-	width: 1200px;
-	min-height: 940px; 
-	overflow: auto;
-	background-color: #33aaff;
-}
+
 /*Header Start*/
 header{
 	width: 100%;
@@ -217,7 +221,7 @@ header{
 }
 /* Huvudmeny Hem */
 .news{
-	width:660px;
+	width:55%;
 	min-height:120px;
 	margin:10px auto;
 	border:2px solid #33aaff;
@@ -229,14 +233,14 @@ header{
 }
 
 .left-column-200px {
-	width:200px;
+	width:16.666667%;
 	min-height:25px;
 	margin:5px 10px;
 	float:left;
 }
 
 .sale {
-	width:200px;
+	width:100%;
 	min-height:360px;
 	border:2px solid #33aaff;
 	border-radius:8px;
@@ -246,7 +250,7 @@ header{
 	margin: 5px 10px;
 }
 .kampanj-produkter{
-	width: 170px;
+	width: 100%;
 	min-height: 150px;
 	margin-bottom:4px;
 	float: left;
@@ -290,17 +294,17 @@ header{
 }
 
 .adspace {
-	width:240px;
+	width:20%;
 	height:500px;
 	margin:5px 10px;
 	float:right;
 }
 
 .gallery {
-	width:660px;
+	width: 55%;
 	height:330px;
 	margin:5px auto;
-	border:2px solid #33aaff;
+	outline:2px solid #33aaff;
 	border-radius:2px;
 	float:left;
 }
