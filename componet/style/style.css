@@ -52,8 +52,18 @@ body {
 	background-attachment:fixed;
 	background-position: top center;
 	background-color: #000000;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "cambria",sans-serif;
 	margin:0;
+}
+
+h1{
+	font-size: 2em;
+}
+h2{
+	font-size: 1.5em;
+}
+h3{
+	font-size: 1.3em;
 }
 
 /* Generella styles Start */
@@ -589,7 +599,6 @@ footer{
 .produkt_area_header h1{
 	padding:0px 5px 5px 5px;
 	margin:0;
-    font-size: 25px;
     margin-left: 20px;
 }
 .produkt_area_img{
