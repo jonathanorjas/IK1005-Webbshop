@@ -1,0 +1,668 @@
+li{
+	list-style-type: none;
+}
+ul{
+	padding: 0px;
+	margin:0;
+	min-height:20px;
+}
+body {
+	background-image:url('../images/bakgrund.jpg');
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-position: top center;
+	background-color: #000000;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin:0;
+}
+
+/* Generella styles Start */
+
+/* Header i blåa textrutor */
+.message-header{
+	color:white;
+	background-color:#33aaff;
+	width:100%;
+	min-height:25px;
+}
+.message-header h1, h2, h3, h4, h5, h6 {
+	padding:0 5px 5px 5px;
+	margin:0;
+}
+
+/* Sidobar i blått */
+.sidebar{
+	width: 140px;
+	min-height:620px;
+	height: auto;
+	background-color: #33aaff;
+	float: left;
+}
+.sidebar-list{
+	margin:auto;
+}
+.sidebar-list a {
+	color:#FFF;
+}
+.sidebar-list a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+}
+.sidebar-list li{
+	min-height:8px;
+	color:#FFF;
+	margin:auto;
+	padding:2px 12px;
+	text-decoration:none;
+	border-top:1px solid #1188dd;
+}
+.sidebar-list li:hover{
+	background-color:#66ccff;
+	border-top:1px solid #33aaff;
+}
+
+/* Avrundad blå knapp */
+
+.compo-knapp {
+	min-width: 100px;
+	min-height: 30px;
+	color: #ffffff;
+	margin:10px 20px;
+	padding:2px 8px;
+	background-color: #33aaff;
+	border-radius: 5px;
+	border: none;
+	float:left;
+}
+.compo-knapp:hover {
+	background-color:#66ccff;
+}
+
+/* Generella styles Stop */
+
+.itemcounter {
+	background-color:#33aaff;
+	text-align:right;
+	color:#ffffff;
+	width:40px;
+	height:20px;
+	padding:0 5px;
+	margin-top:20px;
+	margin-right:10px;
+	border-radius: 10px;
+	float:right;
+}
+.cart {
+	margin-top:10px;
+	margin-right:15px;
+	float:right;
+}
+/*Container för webbplats*/
+.container{
+	margin:0 auto;
+	width: 1200px;
+	min-height: 940px; 
+	overflow: auto;
+	background-color: #33aaff;
+}
+/*Header Start*/
+header{
+	width: 100%;
+	height: 120px;
+	background-image:url('../images/background.jpg');
+	float: left;
+	background-color: black;
+}
+/*Header Stopp*/
+/*Meny Start*/
+.menu{
+	width: 100%;
+	min-height: 40px;
+	background-color: #33aaff;
+	float: left;
+}
+/*Menylänkar Start*/
+.button a:hover, a:visited, a:link, a:active {
+	text-decoration: none;
+}
+.button{
+	background-color: #33aaff;
+	color:#ffffff;
+	text-align:center;
+	text-decoration:none;
+	padding:10px 0;
+	float: left;
+	height: 20px;
+	width: 12.5%;
+}
+.button:hover{
+	background-color: #66ccff;
+}
+/*Menylänkar Stopp*/
+/*Meny Stopp*/
+.search_bar{
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.breadcrums{
+	height: 28px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding-top: 6px;
+	width: 100%;
+	background-color: #78c7ff;
+	float: left;
+	font-size: 12pt;
+}
+.breadcrums ul{
+	margin-left: 20px;
+}
+.breadcrums ul li{
+	float: left;
+	margin-left: 5px;
+}
+.breadcrums a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+}
+/* Huvudmeny Hem */
+.news{
+	width:660px;
+	min-height:120px;
+	margin:10px auto;
+	border:2px solid #33aaff;
+	border-radius:8px;
+	float:left;
+}
+.news p {
+	margin: 10px 15px;
+}
+
+.left-column-200px {
+	width:200px;
+	min-height:25px;
+	margin:5px 10px;
+	float:left;
+}
+
+.sale {
+	width:200px;
+	min-height:360px;
+	border:2px solid #33aaff;
+	border-radius:8px;
+	float:left;
+}
+.sale-products {
+	margin: 5px 10px;
+}
+.kampanj-produkter{
+	width: 170px;
+	min-height: 150px;
+	margin-bottom:4px;
+	float: left;
+	border:2px solid #33aaff;
+	border-radius: 2px;
+	overflow: auto;
+}
+.kampanj-image{
+	float: left;
+	width:100px;
+	height:80px;
+}
+.kampanj-image img{
+	margin-left: auto;
+	margin-right: auto;
+	width:75px;
+	height:auto;
+	display: block;
+}
+.kampanj-info{
+	float: left;
+	width: 100%;
+	height:auto;
+	color:#000;
+}
+.kampanj-text{
+	font-size: 13pt;
+}
+.kampanj-pris{
+	padding-top:10px;
+	float:right;
+	width:70px;
+	height:70px;
+	color:#000;
+}
+
+.mini-register {
+	width:200px;
+	min-height:80px;
+	float:left;
+}
+
+.adspace {
+	width:240px;
+	height:500px;
+	margin:5px 10px;
+	float:right;
+}
+
+.gallery {
+	width:660px;
+	height:330px;
+	margin:5px auto;
+	border:2px solid #33aaff;
+	border-radius:2px;
+	float:left;
+}
+/* Bildspel */
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+
+/*Main Start*/
+main{
+	width: 100%;
+	min-height: 600px;
+	background-color: #FFFFFF; 
+	float: left;
+	padding-bottom: 20px;
+}
+.mainkategori{
+	width: 1008px;
+	height: auto;
+	background-color: #FFFFFF; 
+	float: left;
+	padding-bottom: 20px;
+}
+.kategori_produkter{
+	width: 300px;
+	min-height: 265px;
+	margin-top: 20px;
+	margin-left: 20px;
+	float: left;
+	border:2px solid #33aaff;
+	border-radius: 2px;
+}
+.kategori_produkter:hover{
+	border-color: #B0B0B0;
+}
+.produkt_img_box{
+	float: left;
+	width: 300px;
+	height: 200px;
+}
+.produkt_img_box img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.produkt_info{
+	float: left;
+	width: 285px;
+	padding-left: 15px;
+	height:	60px;
+}
+.produkt_info ul li{
+	list-style-type: disc;
+	margin-left: 20px;
+}
+.short_info{
+	font-size: 12pt;
+}
+.produkt_name{
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-size: 13pt;
+}
+.produkt_pris{
+	margin-top: 20px;
+	float: left;
+	height: 55px;
+	width: 300px;
+}
+.price_small{
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+a .produkt_info, .short_info, .produkt_name, .price_small{
+	color: #000000;
+}
+
+/*Main Stopp*/
+/*Footer start*/
+footer{
+	width: 100%;
+	height: 144px;
+	float: left;
+	background-color: #B0B0B0;
+}
+.footer_logotypes{
+	float: left;
+	width: 30%;
+	height: 144px;
+}
+.footer_logotypes ul{
+	float: left;
+	margin-top: 20px;
+}
+.footer_logotypes ul li{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: -25px;
+}
+.footer_information{
+	margin-top: 20px;
+	float: left;
+}
+.footer_information ul{
+	margin-left: 5px;
+}
+.footer_information ul li{
+	margin-left: 20px;
+	margin-top: 2px;
+	list-style-type: square;
+}
+.footer_information ul li a{
+	color: black;
+}
+.logo_trygg_ehandel{
+	margin-left: 10px;
+	margin-top: 22px;
+	float: left;
+}
+/*Footer stopp*/
+
+/*AboutUs start*/
+.aboutus{
+	width:90%;
+	min-height:200px;
+	margin:10px 0px 10px 0px;
+	margin-right:0%;
+	border:2px solid #33aaff;
+	border-radius:8px;
+    background-color: #FAFAFA;
+	
+	margin-left:auto;
+	margin-right:auto;
+    
+}
+.aboutus p {
+	margin: 15px 15px;
+    text-align: justify;
+}
+
+/*AboutUs stop*/
+/*Contact start*/
+
+.contact-main {
+	width:845px;
+	min-height:600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.contact-form {
+    width:325px;
+	min-height:570px;
+	margin:10px 0px 0px 0px;
+	margin-right:0%;
+	border:2px solid #33aaff;
+	border-radius:8px;
+    background-color: #FAFAFA;
+	
+    
+    float: left;
+}
+.contact p {
+	margin: 10px 10px 10px 10px;
+}
+.contactInfo {
+    width:500px;
+	min-height:570px;
+	margin:10px 0px 0px 0px;
+	margin-right:10px;
+	border:2px solid #33aaff;
+	border-radius:8px;
+    background-color: #FAFAFA;
+    
+    float: left;
+}
+
+.form-contact {
+    margin:10px 0px 0px 0px;
+}
+
+.form-text {
+	
+	text-align:justify;
+	margin:10px 10px 10px 10px;
+}
+
+.dataFields {
+    width: 300px;
+}
+#mapDiv {
+    width: 500px;
+    height: 400px;
+    background-color: #CCC;
+
+}
+
+.mapInfo {
+    margin: 0px 0px 0px 10px;
+}
+/*Contact stop*/
+/*News start*/
+
+.news-main {
+	width: 850px;
+	height: 100%;
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.newsform-text {
+	text-align:justify;
+	margin:10px 10px 10px 10px;
+}
+
+.news-text {
+	width: 500px;
+	height: 100%;
+	float: left;
+}
+
+.news-text  p {
+	margin: 15px 15px;
+	
+	border-bottom-width: 2px;
+	border-bottom-style:solid;
+	border-bottom-color: gray;
+	
+    text-align: justify;
+	
+	padding-right:10px;
+	padding-bottom:10px;
+}
+
+.news-form {
+	width:325px;
+
+	margin:10px 0px 10px 10px;
+	margin-right:0%;
+	border:2px solid #33aaff;
+	border-radius:8px;
+    background-color: #FAFAFA;
+
+	
+	float: left;
+	margin-left:auto;
+	margin-right:auto;
+}
+/*News stop */
+/*Produktsida Start*/
+.produkt_area{
+	width: 90%;
+	min-height: 560px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	border:2px solid #33aaff;
+	border-radius:8px;
+	overflow: auto;
+    background-color: white;
+}
+.produkt_area_header{
+    background-color: #33aaff;
+    width:100%;
+	min-height:25px;
+	color: white;
+	float: left;
+	margin-bottom: 20px;
+}
+.produkt_area_header h1{
+	padding:0px 5px 5px 5px;
+	margin:0;
+    font-size: 25px;
+    margin-left: 20px;
+}
+.produkt_area_img{
+	margin-left: 20px;
+	width: 400px;
+	height: 400px;
+	float: left;
+	background-color: white;
+}
+.produkt_area_img img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.produkt_area_info{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 10px;
+	width: 606px;
+	min-height: 400px;
+	padding-bottom: 20px;
+	overflow: auto; 
+	float: left;
+	border-left: 2px solid #33aaff;
+}
+.produkt_area_info ul{
+	margin-left: 20px;
+}
+.produkt_area_info ul li p{
+	text-align: justify;
+	width: 500px;
+}
+.produkt_area_info .add_to_basket{
+	float: left;
+}
+.produkt_area_info .add_produkt{
+	min-width: 100px;
+	height: 30px;
+	color: #ffffff;
+	background-color: #33aaff;
+	border-radius: 5px;
+	border: none;
+}
+.add_produkt:hover{
+	background-color: #66ccff;
+}
+.produkt_area_information{
+	margin-top: 20px;
+	float: left;
+	width: 1040px;
+	min-height: 200px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-top: 2px solid #33aaff; 
+	overflow: auto;
+	padding-bottom: 20px;
+}
+.produkt_area_information h2{
+	color: black;
+	margin-top: 5px;
+}
+.produkt_area_information ul{
+	margin-left: 2px;
+}
+.produkt_area_information ul li{
+	
+}
+.produkt_area_information ul:hover{
+	margin-left: 2px;
+}
+.produkt_area_information table{
+	width: 1040px;
+}
+.spec_header{
+	font-weight: bold;
+
+}
+.table_row_odd{
+	background-color: white;
+}
+.table_row_even{
+	background-color: #e6e6e6;
+}
+
+/* Shopping Cart Start */
+
+.cart-main {
+	padding:0;
+}
+
+.cart-menu{
+	width:760px;
+	min-height:560px;
+	margin:10px 15px;
+	border:2px solid #33aaff;
+	border-radius:8px;
+	float:left;
+}
+.cart-contents {
+	width:95%;
+	min-height:400px;
+	height:100%;
+	margin:0 auto;
+}
+.cart-view {
+	width:100%;
+	height:460px;
+	padding:4px 8px;
+	overflow:auto;
+}
+.cart-tab {
+	min-height:40px;
+	border-top:1px solid #33aaff;
+}
+
+/* Shopping Cart End */

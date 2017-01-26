@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kontakt - Componet</title>
+<link rel="stylesheet" type="text/css" href="../style/style.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<a href="../">
+				<img src="../images/ComponetLogoX120.png" alt="componet">
+			</a>
+			<form class="search_bar">
+				<input type="text" name="searchquery">
+				<input type="submit" value="Submit" name="Sök">
+			</form>
+			<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
+			<div class="itemcounter"><span>0</span></div>
+		</header>
+		<nav class="menu">
+		<ul>
+			<li><a class="button" href="../">Hem</a></li>
+			<li><a class="button" href="../butik/">Butik</a></li>
+			<li><a class="button" href="../omoss/">Om Oss</a></li>
+			<li><a class="button" href="../kontakt/">Kontakt</a></li>
+			<li><a class="button" href="../nyhetsbrev/">Nyhetsbrev</a></li>
+		</ul>
+		</nav>
+		<nav class="breadcrums">
+			<ul>
+				<li><a href="../">Start</a></li>
+				<li>></li>
+				<li>Kontakt</li>
+			</ul>
+		</nav>
+		<main>
+			<div class="contact-main">
+				<article class="contactInfo">
+					<div class="message-header">
+							<h1>Hitta oss</h1>
+					</div>
+					<div id="mapDiv">
+						
+					</div>
+					<div class="mapInfo">
+						<p>Vi existerar inte, men här är addressen till Högskolan Dalarna<br><br>
+						Address: Högskolan Dalarna, Paradiset-Nygårdarna, Borlänge<br>
+						Telefon: 023-77 88  88<br>
+						Fax: Vem-använder-fax-numera?<br>
+						</p>
+					</div>
+				</article>
+				
+				<article class="contact-form">
+					<div class="message-header">
+							<h1>Kontakta oss</h1>
+					</div>
+					<div class="form-text">
+						<p>Skicka gärna meddelande till oss om du har några frågor eller funderingar!
+						<br><br>
+						Fyll i formuläret nedan med dina uppgifter och meddelande så kommer vi att svara så fort vi kan!</p>
+						<form class="form-contact" name="mainForm" method="post">
+							Namn:
+							<br>
+							<input type="text" name="name" class="dataFields"> <br>
+							Telefon nummer:
+							<br>
+							<input type="text" name="cell" class="dataFields"> <br>
+							Epost:
+							<br>
+							<input type="text" name="mail" class="dataFields"> <br>
+							<br>
+							Meddelande: <br>
+							<textarea name="messages" rows="6" onclick="this.value='' " class="dataFields">Skriv ditt meddelande här! </textarea>
+							<br>
+							<br>
+							<input type="reset" value="Rensa">
+							<input type="submit" value="Skicka">
+						</form>
+					</div>
+				</article>
+			</div>
+		</main>
+		<footer>
+			<div class="footer_logotypes">
+				<img src="../images/trygg_e-handel.png" alt="Trygg ehandel" class="logo_trygg_ehandel">
+				<ul style="margin-left: 10px;">
+					<li><img src="../images/visa-icon.png" alt="Visa"></li>
+					<li><img src="../images/mastercard-icon.png" alt="Mastercard"></li>
+				</ul>
+				<ul>
+					<li><img src="../images/paypal-icon.png" alt="Paypal"></li>
+					<li style="margin-left: 6px; margin-top: 15px;"><img src="../images/klarna_logo.png" alt="Klarna"></li>
+				</ul>
+				<ul>
+					<li style="margin-top:10px;"><img src="../images/dhl-shipping-box-icon.png" alt="DHL"></li>
+					<li style="margin-top:20px;"><img src="../images/posten_logo.png" alt="Posten"></li>
+				</ul>
+				
+			</div>
+			<div class="footer_information">
+				<h3>Kundtjänst</h3>
+				<ul>					
+					<li><a href="">Kundservice</a></li>
+					<li><a href="">Support</a></li>
+					<li><a href="">Returer</a></li>
+					<li><a href="mailto:webmaster@componet.com">Webmaster</a></li>
+				</ul>
+			</div>	
+		</footer>	
+	</div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+  function initialize() {
+    var mapCanvas = document.getElementById('mapDiv');
+    var mapOptions = {
+      center: new google.maps.LatLng(60.48720569999999, 15.410279299999956),
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions)
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</body>
+</html>
