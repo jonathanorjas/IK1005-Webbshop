@@ -203,7 +203,7 @@ display: block;
 	}
 
 	.dropdown {
-		display: inline-block;
+		display: none;
 	}
 
 	.dropdown-content {
@@ -457,7 +457,8 @@ display: block;
 	}
 	.footer_logotypes{
 		float: left;
-		width: 30%;
+		width: 25%;
+		min-width: 300px;
 		height: 144px;
 	}
 	.footer_logotypes ul{
@@ -789,7 +790,7 @@ display: block;
 	 	width: 95%;
 	 	margin-left: auto;
 	 	margin-right: auto;
-	 	float: none;
+	 	float: left;
 	 }
  	header{
 		width: 100%;
@@ -801,11 +802,26 @@ display: block;
 	header img{
 		width: 200px;
 	}
+	ul li .button{
+		display: none;
+	}
+	ul li ul li{
+		display: inline-block;
+	}
+	.dropdown{
+		display: inline-block;
+	}
+	.cart{
+		display: none;
+	}
+	.itemcounter{
+		display: none;
+	}
 }
 @media screen and (max-width:550px) {
 	 
 }
-@media screen and (max-width:320px) {
+@media screen and (max-width:320px) {;
 } 
 
 
