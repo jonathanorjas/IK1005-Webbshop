@@ -44,7 +44,6 @@ display: block;
 	content: ''; content: none;
 	}
 	table { 
-	3
 	border-collapse: collapse; border-spacing: 0;
 	}
 
@@ -275,6 +274,7 @@ display: block;
 
 	.left-column-200px {
 		width:16.666667%;
+		min-width: 200px;
 		min-height:25px;
 		margin:5px 10px;
 		float:left;
@@ -307,7 +307,7 @@ display: block;
 	.kampanj-image img{
 		margin-left: auto;
 		margin-right: auto;
-		width:75px;
+		width:75%;
 		height:auto;
 		display: block;
 	}
@@ -451,28 +451,23 @@ display: block;
 	/*Footer start*/
 	footer{
 		width: 100%;
-		height: 144px;
+		height: auto;
 		float: left;
 		background-color: #B0B0B0;
 	}
 	.footer_logotypes{
-		float: left;
-		width: 25%;
-		min-width: 300px;
-		height: 144px;
-	}
-	.footer_logotypes ul{
-		float: left;
 		margin-top: 20px;
-	}
-	.footer_logotypes ul li{
-		margin-top: 10px;
-		margin-left: 10px;
-		margin-bottom: -25px;
+		margin-left: 2.5%;
+		float: left;
+		width: 50%;
+		height: 144px;
 	}
 	.footer_information{
 		margin-top: 20px;
+		width: 12%;
 		float: left;
+		margin-left: 2.5%;
+		
 	}
 	.footer_information ul{
 		margin-left: 5px;
@@ -485,9 +480,17 @@ display: block;
 	.footer_information ul li a{
 		color: black;
 	}
+	.logo_leverantor{
+		width: 50%;
+		float: left;
+		max-width: 220px;
+		height: auto;
+		margin-left: 5%;
+	}
 	.logo_trygg_ehandel{
-		margin-left: 10px;
-		margin-top: 22px;
+		width: 45%;
+		max-width: 100px;
+		height: auto;
 		float: left;
 	}
 	/*Footer stopp*/
@@ -759,7 +762,6 @@ display: block;
 		min-height:40px;
 		border-top:1px solid #33aaff;
 	}
-
 	/* Shopping Cart End */
 
 }
@@ -782,21 +784,17 @@ display: block;
 	 }
 	 .left-column-200px{
 	 	width: 95%;
-	 	margin-left: auto;
-	 	margin-right: auto;
-	 	float: none;
+	 	margin-left: 2.5%;
+	 	margin-right: 2.5%;
 	 }
 	 .news{
 	 	width: 95%;
-	 	margin-left: auto;
-	 	margin-right: auto;
+	 	margin-left: 2.5%;
+	 	margin-right: 2.5%;
 	 	float: left;
 	 }
  	header{
-		width: 100%;
-		height: 120px;
-		float: left;
-		background-color: black;
+		height: 80px;
 		background-image: none;
 	}
 	header img{
@@ -817,13 +815,47 @@ display: block;
 	.itemcounter{
 		display: none;
 	}
+	.kampanj-produkter{
+		
+	}
+	.kampanj-image{
+		width: 40%;
+		height: auto;
+	}
+	.kampanj-image img{
+		width: 100%;
+		height: auto;
+	}
+	.kampanj-info{
+	
+	}
+	.kampanj-text{
+	
+	}
+	.kampanj-pris{
+		
+	}
+	.footer_information{
+		clear: both;
+		width: 30%
+	}
+	.footer_logotypes{
+		width: 50%;
+		margin-left: 5%;
+	}
+	.logo_leverantor{
+		width: 70%;
+		height: auto;
+	}
+	.logo_trygg_ehandel{
+		width: 25%;
+		height: auto;
+	}
 }
 @media screen and (max-width:550px) {
-	 
+
 }
-@media screen and (max-width:320px) {;
+@media screen and (max-width:320px) {
+
 } 
 
-
-/*--------------------------------------------------------------------------------------------------------*/
-/*ALLT ANNAT Ska in media queris*/
