@@ -1,3 +1,6 @@
+<?php
+	header('Content-Type: text/html; charset=ISO-8859-1');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +26,7 @@
 		<nav class="menu">
 		<ul>
 			<li><a class="button" href="../">Hem</a></li>
-			<li><a class="button" href="../butik/">Butik</a></li>
+			<li><a class="button" href="../butik/?Controller/getProducts">Butik</a></li>
 			<li><a class="button" href="../omoss/">Om Oss</a></li>
 			<li><a class="button" href="../kontakt/">Kontakt</a></li>
 			<li><a class="button" href="../nyhetsbrev/">Nyhetsbrev</a></li>
@@ -33,65 +36,48 @@
 			<ul>
 				<li><a href="../">Start</a></li>
 				<li>></li>
-				<li>Butik</li>
+				<li><a href="../butik/?Controller/getProducts">Butik</a></li>
 			</ul>
 		</nav>
 		<nav class="sidebar">
 			<div class="message-header">
 					<h2>Kategorier</h2>
 				</div>
-			<ul class="sidebar-list">	
-				<li><a href="../butik/lagring/">Lagring</a></li>
-				<li><a href="../butik/ram-minne/">RAM-minne</a></li>
-				<li><a href="../butik/grafikkort/">Grafikkort</a></li>
-				<li><a href="">Processorer</a></li>
-				<li><a href="">Datorchassi</a></li>
-				<li><a href="">Skärmar</a></li>
-				<li><a href="">Tangentbord</a></li>
-				<li><a href="">Möss</a></li>
-				<li><a href="">USB-minnen</a></li>
-				<li><a href="">Kablar</a></li>
-				<li><a href="">Nätverk</a></li>
+			<ul class="sidebar-list">
+				<?php	
+					foreach ($categories as $category) {
+						echo '<li><a href="./?Controller/getProductsbyCategory/'.$category['ID'].'">'.$category['Kategori'].'</a></li>';
+					}
+				?>
 			</ul>	
 		</nav>
 		<main class="mainkategori">
 			<ul>
+			<?php
+			foreach ($products as $product) {
+				
+			echo '
 			<li>
 				<article class="kategori_produkter">
-					<a href="grafikkort/geforce_gt740_2_gb/">
+					<a href="./?Controller/getProductbyID/'.$product['ID'].'">
 						<div class="produkt_img_box">
-							<img src="../images/produkter/geforce_gt740_small.png" alt="Gforce GT740 2 GB">
+							<img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="50%" height="auto">
 						</div>
 						<div class="produkt_info">
-							<h2 class="produkt_name">Geforce GT740 2 GB</h2>
+							<h2 class="produkt_name">'.$product['Namn'].'</h2>
 							<ul>
 								<li><span class="short_info">Grafikkort med GDDR5-minne</span></li>	
 							</ul>		
 						</div>
 						<div class="produkt_pris">
-							<span class="price_small">599:-</span>
+							<span class="price_small">'.$product['Pris'].':-</span>
 						</div>
 					</a>
 				</article>
 			</li>
-			<li>
-				<article class="kategori_produkter">
-					<a href="grafikkort/asus_geforce_g210_grafikkort_1_gb/">
-						<div class="produkt_img_box">
-							<img src="../images/produkter/asus_geforce_g210_grafikkort_1_gb_small.png" alt="Asus Geforce G210 Grafikkort 1 GB">
-						</div>
-						<div class="produkt_info">
-							<h2 class="produkt_name">Asus Geforce G210 Grafikkort 1 GB</h2>
-							<ul>
-								<li><span class="short_info">Fläktlös</span></li>
-							</ul>		
-						</div>
-						<div class="produkt_pris">
-							<span class="price_small">449:-</span>
-						</div>
-					</a>
-				</article>
-			</li>
+			';
+			}
+			?>
 			</ul>
 		</main>
 		<footer>
