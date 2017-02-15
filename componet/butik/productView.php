@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Asus Geforce G210 Grafikkort 1 GB - Componet</title>
+<title><?php echo $product[0] ['Namn'];?> - Componet</title>
 <link rel="stylesheet" type="text/css" href="../style/style.css">
 <meta name="robots" content="noindex, nofollow">
 </head>
