@@ -19,20 +19,38 @@ class Controller {
 	public function getProducts() {
 		$productArray=$this->model->getProducts();
 		$this->view->assign('products',$productArray);
-		$categories=$this->model->getCategories();
-		$this->view->assign('categories',$categories);
-		$this->view->display('./productsView.php');
+		$this->view->display('./AdminProductView.php');
 	}
 
-	public function addProduct(){
-		
+	public function addProduct($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
+		$this->model->addProduct($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
 	}
+
 	public function deleteProduct($id){
-
+		$this->model->deleteProduct($id);
 	}
-	public function updateProduct($id){
 
+	public function updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
+		$this->model->updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
 	}
+
+	public function getProductbyID($id) {
+		$productVar=$this->model->getProductbyID($id);
+		
+		$this->view->display('./AdminProductView.php');
+	}
+
+	public function getProductsbyCategory($category) {
+		$productArray=$this->model->getProductsbyCategory($category);
+		$this->view->assign('products',$productArray);
+		$this->view->display('./AdminProductView.php');
+	}
+	public function getDefaultView(){
+		$productArray=$this->model->getProducts();
+		$this->view->assign('products',$productArray);
+		$this->view->display('./AdminProductView.php');
+	}
+
 
 }
 
