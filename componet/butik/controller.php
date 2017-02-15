@@ -38,8 +38,10 @@ class Controller {
 		$this->view->assign('categories',$categories);
 		$this->view->display('./productsView.php');
 	}
-	public function getError(){
-		echo 'Test';
+	public function getDefaultView(){
+		$productArray=$this->model->getProducts();
+		$this->view->assign('products',$productArray);
+		$this->view->display('./productsView.php');
 	}
 
 
