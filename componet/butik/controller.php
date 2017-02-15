@@ -41,6 +41,8 @@ class Controller {
 	public function getDefaultView(){
 		$productArray=$this->model->getProducts();
 		$this->view->assign('products',$productArray);
+		$categories=$this->model->getCategories();
+		$this->view->assign('categories',$categories);
 		$this->view->display('./productsView.php');
 	}
 
