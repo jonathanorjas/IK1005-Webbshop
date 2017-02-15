@@ -37,6 +37,7 @@ class Controller {
 	public function getProductbyID($id) {
 		$productVar=$this->model->getProductbyID($id);
 		
+		$this->view->assign('products',$productVar);
 		$this->view->display('./AdminProductView.php');
 	}
 

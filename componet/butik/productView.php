@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title><?php echo $product[0] ['Namn'];?> - Componet</title>
+<title>Asus Geforce G210 Grafikkort 1 GB - Componet</title>
 <link rel="stylesheet" type="text/css" href="../style/style.css">
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -65,8 +65,9 @@
 								<h2>'.$product[0] ['Pris'].':-</h2>
 							</li>
 							<li>
+								<a class="add_produkt" href=../index1.php?Controller/addToCart/'.$product[0] ['ID'].'>Lägg till i kundvagn</a>
 								<form class="add_to_basket">
-									<button class="add_produkt" type="submit" value="Submit" name="buy"><span>Lägg till Kundvagn</span></button>
+									<button class="add_produkt" type="submit" value="Submit" name="buy">Lägg till Kundvagn</button>
 								</form>
 							</li>
 						</ul>
