@@ -15,7 +15,7 @@ class FrontController{
 				break;
 			default:
 				$controller=new Controller();
-				$controller->getDefaultView();
+				$controller->getProducts();
 		}	
 		
 	}

@@ -28,6 +28,8 @@ class Controller {
 
 	public function deleteProduct($id){
 		$this->model->deleteProduct($id);
+		$this->view->assign('products',$productArray);
+		$this->view->display('./AdminProductView.php');
 	}
 
 	public function updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
@@ -36,7 +38,6 @@ class Controller {
 
 	public function getProductbyID($id) {
 		$productVar=$this->model->getProductbyID($id);
-		
 		$this->view->assign('products',$productVar);
 		$this->view->display('./AdminProductView.php');
 	}
