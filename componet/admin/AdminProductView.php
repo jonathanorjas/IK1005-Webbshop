@@ -2,7 +2,7 @@
 	header('Content-Type: text/html; charset=ISO-8859-1');
 ?>
 <!DOCTYPE html>
-<html charset="UTF-8">
+<html charset="ISO-8859-1">
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../style/style.css">
@@ -17,40 +17,44 @@
 			margin-right: auto;
 			width: 600px;
 		}
+		h1{
+			text-align: center;
+		}
 		td{
 			border: 1px solid black;
 		}
 	</style>
 </head>
 <body>
-		<table>
-			<tr>
-				<th>ID</th>
-				<th>Bild</th>
-				<th>Namn</th>
-				<th>Kategori</th>
-				<th>Tillverkare</th>
-				<th>Pris</th>
-				<th>Lagerantal</th>
-				<th>Uppdatera</th>
-				<th>Ta Bort</th>
-			</tr>
-			<?php
-				foreach ($products as $product) {
-					echo '
-					<tr>
-					<td>'.$product['ID'].'</td>
-					<td><img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="100%" height="auto"></td>
-					<td>'.$product['Namn'].'</td>
-					<td>'.$product['Kategori'].'</td>
-					<td>'.$product['Tillverkare'].'</td>
-					<td>'.$product['Pris'].'</td>
-					<td>'.$product['LagerAntal'].'</td>
-					<td><a href="#">Uppdatera</a></td>
-					<td><a href="./index1.php?Controller/deleteProduct/'.$product['ID'].'">Ta Bort</a></td>
-					</tr>';
-				}
-			?>
-		</table>
+	<h1>Administration av Våra Produkter</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Bild</th>
+			<th>Namn</th>
+			<th>Kategori</th>
+			<th>Tillverkare</th>
+			<th>Pris</th>
+			<th>Lagerantal</th>
+			<th>Uppdatera</th>
+			<th>Ta Bort</th>
+		</tr>
+		<?php
+			foreach ($products as $product) {
+				echo '
+				<tr>
+				<td>'.$product['ID'].'</td>
+				<td><img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="100%" height="auto"></td>
+				<td>'.$product['Namn'].'</td>
+				<td>'.$product['Kategori'].'</td>
+				<td>'.$product['Tillverkare'].'</td>
+				<td>'.$product['Pris'].'</td>
+				<td>'.$product['LagerAntal'].'</td>
+				<td><a href="#">Uppdatera</a></td>
+				<td><a href="./index1.php?Controller/deleteProduct/'.$product['ID'].'">Ta Bort</a></td>
+				</tr>';
+			}
+		?>
+	</table>
 </body>
 </html>

@@ -28,8 +28,7 @@ class Controller {
 
 	public function deleteProduct($id){
 		$this->model->deleteProduct($id);
-		$this->view->assign('products',$productArray);
-		$this->view->display('./AdminProductView.php');
+		header("Location: ./index1.php?Controller/getProducts");
 	}
 
 	public function updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){

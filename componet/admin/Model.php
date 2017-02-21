@@ -28,10 +28,10 @@ class Model {
 			throw new Exception('Databasfel - kan ej hämta produkter '.$pdoexp->getMessage());
 		}
 	}
-	public static function addProduct($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
+	public function addProduct($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
 		try{
 		$pdocon = $this->ConnectPDO();
-		$pdoStatement = $pdocon = $this->prepare('CALL h14viwib_addProduct('.$namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal.')');
+		$pdoStatement = $pdocon->prepare('CALL h14viwib_addProduct('.$namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal.')');
 		$pdoStatement->execute();
 		$pdocon = NULL;
 		}
@@ -40,10 +40,10 @@ class Model {
 			throw new Exception('Databasfel - kan ej Lägga till produkter '.$pdoexp->getMessage());	
 		}
 	}
-	public static function deleteProduct($id){
+	public function deleteProduct($id){
 		try{
 		$pdocon = $this->ConnectPDO();
-		$pdoStatement = $pdocon = $this->prepare('CALL h14viwib_addProduct('.$id.')');
+		$pdoStatement = $pdocon->prepare('CALL h14viwib_deleteProduct('.$id.')');
 		$pdoStatement->execute();
 		$pdocon = NULL;
 		}
@@ -51,13 +51,14 @@ class Model {
 			$pdocon = NULL;
 			throw new Exception('Databasfel - kunde ej ta bort produkter '.$pdoexp->getMessage());	
 		}
+
 	}
-	/*public static function updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
+	public function updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
 		$pdocon = $this->ConnectPDO();
 		$pdoStatement = $pdocon = $this->prepare('CALL h14viwib_updateProduct('.$id,$namn,$kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal.')');
 		$pdoStatement->execute();
 		$pdocon = NULL;
-	}*/
+	}
 	
 	private function ConnectPDO() {
 		try {
