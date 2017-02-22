@@ -28,11 +28,45 @@ class Model {
 			throw new Exception('Databasfel - kan ej hämta produkter '.$pdoexp->getMessage());
 		}
 	}
+	public function getCategories(){
+		try {
+		$pdocon = $this->ConnectPDO();
+		
+		$pdoStatement = $pdocon->prepare('CALL h14viwib_getCategories()');
+		
+		$pdoStatement->execute();
+		$categories = $pdoStatement->fetchAll();
+		$pdocon = NULL;
+		
+		return $categories;
+		}
+		catch (PDOException $pdoexp){
+			$pdocon = NULL;
+			throw new Exception('Databasfel - kan ej hämta produkter '.$pdoexp->getMessage());
+		}
+	}
+	public function getProductbyID($id_num) {
+		try {
+		$pdocon = $this->ConnectPDO();
+		
+		$pdoStatement = $pdocon->prepare("CALL h14viwib_getProductsbyID('{$id_num}')");
+		
+		$pdoStatement->execute();
+		$productID = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
+		$pdocon = NULL;
+		return $productID;
+		}
+		catch (PDOException $pdoexp){
+			$pdocon = NULL;
+			throw new Exception('Databasfel - kan ej hämta produkter '.$pdoexp->getMessage());
+		}
+	}
 	public function addProduct($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
 		try{
+		$data  = array($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
 		$pdocon = $this->ConnectPDO();
-		$pdoStatement = $pdocon->prepare('CALL h14viwib_addProduct('.$namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal.')');
-		$pdoStatement->execute();
+		$pdoStatement = $pdocon->prepare('CALL h14viwib_addProduct(?,?,?,?,?,?,?)');
+		$pdoStatement->execute($data);
 		$pdocon = NULL;
 		}
 		catch (PDOException $pdoexp){
@@ -54,10 +88,17 @@ class Model {
 
 	}
 	public function updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
+		try{
+		$data  = array($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
 		$pdocon = $this->ConnectPDO();
-		$pdoStatement = $pdocon = $this->prepare('CALL h14viwib_updateProduct('.$id,$namn,$kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal.')');
-		$pdoStatement->execute();
+		$pdoStatement = $pdocon->prepare('CALL h14viwib_updateProduct(?,?,?,?,?,?,?,?)');
+		$pdoStatement->execute($data);
 		$pdocon = NULL;
+		}
+		catch (PDOException $pdoexp){
+			$pdocon = NULL;
+			throw new Exception('Databasfel - kan ej Lägga till produkter '.$pdoexp->getMessage());	
+		}
 	}
 	
 	private function ConnectPDO() {

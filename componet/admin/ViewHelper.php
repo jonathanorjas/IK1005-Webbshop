@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 */
 class View{
 		
-	private $productArray; // vår array innehållandes data
+	private $productArray; // vÃ¥r array innehÃ¥llandes data
 	function __construct(){
 		$this->productArray=array();
 	}
@@ -15,7 +15,7 @@ class View{
 			$this->productArray[$key]=$value;
 		}
 		else{
-			throw  new Exception('Nyckeln är upptagen!');
+			throw  new Exception('Nyckeln Ã¤r upptagen!');
 		}
 			
 	}

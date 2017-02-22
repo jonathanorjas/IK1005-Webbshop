@@ -2,11 +2,12 @@
 	header('Content-Type: text/html; charset=ISO-8859-1');
 ?>
 <!DOCTYPE html>
-<html charset="ISO-8859-1">
+<html lang="sv-se">
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../style/style.css">
 	<meta name="robots" content="noindex, nofollow">
+	<meta charset="utf-8">
 	<style>
 		body{
 			background: #FFFFFF;
@@ -27,6 +28,7 @@
 </head>
 <body>
 	<h1>Administration av Våra Produkter</h1>
+	<a href="./index1.php?Controller/addProductView/">Lägg till Produkter</a>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -50,7 +52,7 @@
 				<td>'.$product['Tillverkare'].'</td>
 				<td>'.$product['Pris'].'</td>
 				<td>'.$product['LagerAntal'].'</td>
-				<td><a href="#">Uppdatera</a></td>
+				<td><a href="./index1.php?Controller/updateProductView/">Uppdatera</a></td>
 				<td><a href="./index1.php?Controller/deleteProduct/'.$product['ID'].'">Ta Bort</a></td>
 				</tr>';
 			}

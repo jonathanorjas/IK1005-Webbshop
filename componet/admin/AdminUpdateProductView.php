@@ -12,7 +12,9 @@
 	</style>
 </head>
 <body>
-	<form action="./index1.php?Controller/addProduct" method="post">
+	<form action="./index1.php?Controller/updateProduct" method="post">
+		<h3>Produkt-ID</h3>
+		<input type="text" name="id">
 		<h3>Produktnamn:</h3>
 		<input type="text" name="namn">
 		<h3>Tillverkare:</h3>

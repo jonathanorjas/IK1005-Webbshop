@@ -22,8 +22,21 @@ class Controller {
 		$this->view->display('./AdminProductView.php');
 	}
 
-	public function addProduct($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
-		$this->model->addProduct($namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
+	public function addProduct(){
+		$namn = $_POST['namn'];
+		$kategori = (int)$_POST['kategori'];
+		$beskrivning = $_POST['beskrivning']; 
+		$pris = (double)str_replace(',','.',$_POST['pris']); 
+		$tillverkare = $_POST['tillverkare'];
+		$lagerAntal = (int)$_POST['lagerantal'];
+		$this->model->addProduct($namn, $kategori, $beskrivning, $pris, $tillverkare, 'Testurl', $lagerAntal);
+		header("Location: ./index1.php?Controller/getProducts");
+	}
+
+	public function addProductView(){
+		$categories = $this->model->getCategories();
+		$this->view->assign('categories',$categories);
+		$this->view->display('./AdminAddProductView.php');
 	}
 
 	public function deleteProduct($id){
@@ -31,8 +44,23 @@ class Controller {
 		header("Location: ./index1.php?Controller/getProducts");
 	}
 
-	public function updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal){
-		$this->model->updateProduct($id, $namn, $kategoriID, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
+	public function updateProduct(){
+		$id = (int)$_POST['id'];
+		$namn = $_POST['namn'];
+		$kategori = (int)$_POST['kategori'];
+		$beskrivning = $_POST['beskrivning']; 
+		$pris = (double)str_replace(',','.',$_POST['pris']); 
+		$tillverkare = $_POST['tillverkare'];
+		$lagerAntal = (int)$_POST['lagerantal'];
+		$this->model->updateProduct($id, $namn, $kategori, $beskrivning, $pris, $tillverkare, 'Testurl', $lagerAntal);
+		header("Location: ./index1.php?Controller/getProducts");
+	}
+	public function updateProductView(){
+		//$products = $this->model->getProductbyID($id);
+		//$this->view->assign('products',$products);
+		$categories = $this->model->getCategories();
+		$this->view->assign('categories',$categories);
+		$this->view->display('./AdminUpdateProductView.php');
 	}
 
 	public function getProductbyID($id) {
