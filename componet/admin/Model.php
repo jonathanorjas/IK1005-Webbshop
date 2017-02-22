@@ -45,6 +45,23 @@ class Model {
 			throw new Exception('Databasfel - kan ej hämta produkter '.$pdoexp->getMessage());
 		}
 	}
+	public function getProductsbyManufacturer($manufacture_string) {
+		try {
+		$pdocon = $this->ConnectPDO();
+		
+		$pdoStatement = $pdocon->prepare("CALL h14viwib_getProductsbyManufacturer'{$manufacture_string}')");
+		
+		$pdoStatement->execute();
+		$productsbyManufacturer = $pdoStatement->fetchAll();
+		$pdocon = NULL;
+		
+		return $productsbyManufacturer;
+		}
+		catch (PDOException $pdoexp){
+			$pdocon = NULL;
+			throw new Exception('Databasfel - kan ej hämta produkter '.$pdoexp->getMessage());
+		}
+	}
 	public function getProductbyID($id_num) {
 		try {
 		$pdocon = $this->ConnectPDO();
@@ -55,6 +72,23 @@ class Model {
 		$productID = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
 		$pdocon = NULL;
 		return $productID;
+		}
+		catch (PDOException $pdoexp){
+			$pdocon = NULL;
+			throw new Exception('Databasfel - kan ej hämta produkter '.$pdoexp->getMessage());
+		}
+	}
+	public function getProductsbyCategory($category) {
+		try {
+		$pdocon = $this->ConnectPDO();
+		
+		$pdoStatement = $pdocon->prepare("CALL h14viwib_getProductsbyCategory('{$category}')");
+		
+		$pdoStatement->execute();
+		$productsbyCategory = $pdoStatement->fetchAll();
+		$pdocon = NULL;
+		
+		return $productsbyCategory;
 		}
 		catch (PDOException $pdoexp){
 			$pdocon = NULL;

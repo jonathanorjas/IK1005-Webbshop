@@ -16,7 +16,7 @@
 			margin-top: 100px;
 			margin-left: auto;
 			margin-right: auto;
-			width: 600px;
+			width: 800px;
 		}
 		h1{
 			text-align: center;
@@ -28,6 +28,7 @@
 </head>
 <body>
 	<h1>Administration av Våra Produkter</h1>
+	<h2><a href="./index1.php?Controller/getProducts">Start Administrationsverktyg</a></h2>
 	<a href="./index1.php?Controller/addProductView/">Lägg till Produkter</a>
 	<table>
 		<tr>
@@ -48,11 +49,11 @@
 				<td>'.$product['ID'].'</td>
 				<td><img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="100%" height="auto"></td>
 				<td>'.$product['Namn'].'</td>
-				<td>'.$product['Kategori'].'</td>
-				<td>'.$product['Tillverkare'].'</td>
+				<td><a href="./index1.php?Controller/getProductsbyCategory/'.$product['KategoriID'].'">'.$product['Kategori'].'</a></td>
+				<td><a href="./index1.php?Controller/getProductsbyManufacturer/'.$product['Tillverkare'].'">'.$product['Tillverkare'].'</a></td>
 				<td>'.$product['Pris'].'</td>
 				<td>'.$product['LagerAntal'].'</td>
-				<td><a href="./index1.php?Controller/updateProductView/">Uppdatera</a></td>
+				<td><a href="./index1.php?Controller/updateProductView/'.$product['ID'].'">Uppdatera</a></td>
 				<td><a href="./index1.php?Controller/deleteProduct/'.$product['ID'].'">Ta Bort</a></td>
 				</tr>';
 			}

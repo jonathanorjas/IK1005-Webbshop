@@ -25,11 +25,12 @@ class Controller {
 	public function addProduct(){
 		$namn = $_POST['namn'];
 		$kategori = (int)$_POST['kategori'];
+		$bildURL = $_POST['bildURL'];
 		$beskrivning = $_POST['beskrivning']; 
 		$pris = (double)str_replace(',','.',$_POST['pris']); 
 		$tillverkare = $_POST['tillverkare'];
 		$lagerAntal = (int)$_POST['lagerantal'];
-		$this->model->addProduct($namn, $kategori, $beskrivning, $pris, $tillverkare, 'Testurl', $lagerAntal);
+		$this->model->addProduct($namn, $kategori, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
 		header("Location: ./index1.php?Controller/getProducts");
 	}
 
@@ -48,16 +49,17 @@ class Controller {
 		$id = (int)$_POST['id'];
 		$namn = $_POST['namn'];
 		$kategori = (int)$_POST['kategori'];
+		$bildURL = $_POST['bildURL'];
 		$beskrivning = $_POST['beskrivning']; 
 		$pris = (double)str_replace(',','.',$_POST['pris']); 
 		$tillverkare = $_POST['tillverkare'];
 		$lagerAntal = (int)$_POST['lagerantal'];
-		$this->model->updateProduct($id, $namn, $kategori, $beskrivning, $pris, $tillverkare, 'Testurl', $lagerAntal);
+		$this->model->updateProduct($id, $namn, $kategori, $beskrivning, $pris, $tillverkare, $bildURL, $lagerAntal);
 		header("Location: ./index1.php?Controller/getProducts");
 	}
-	public function updateProductView(){
-		//$products = $this->model->getProductbyID($id);
-		//$this->view->assign('products',$products);
+	public function updateProductView($id){
+		$products = $this->model->getProductbyID($id);
+		$this->view->assign('products',$products);
 		$categories = $this->model->getCategories();
 		$this->view->assign('categories',$categories);
 		$this->view->display('./AdminUpdateProductView.php');
@@ -65,6 +67,12 @@ class Controller {
 
 	public function getProductbyID($id) {
 		$productVar=$this->model->getProductbyID($id);
+		$this->view->assign('products',$productVar);
+		$this->view->display('./AdminProductView.php');
+	}
+
+	public function getProductsbyManufacturer($manufacturer){
+		$$productVar=$this->model->getProductsbyManufacturer($manufacturer);
 		$this->view->assign('products',$productVar);
 		$this->view->display('./AdminProductView.php');
 	}

@@ -12,11 +12,14 @@
 	</style>
 </head>
 <body>
+<h2><a href="./index1.php?Controller/getProducts">Start Administrationsverktyg</a></h2>
 	<form action="./index1.php?Controller/addProduct" method="post">
 		<h3>Produktnamn:</h3>
 		<input type="text" name="namn">
 		<h3>Tillverkare:</h3>
 		<input type="text" name="tillverkare">
+		<h3>BildLänk:</h3>
+		<input type="text" name="bildURL">
 		<h3>Kategori</h3>
 		<select name="kategori">
 		<?php
