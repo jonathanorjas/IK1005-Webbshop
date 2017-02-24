@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Asus Geforce G210 Grafikkort 1 GB - Componet</title>
+<title><?php echo $product[0]['Namn']?> - Componet</title>
 <link rel="stylesheet" type="text/css" href="../style/style.css">
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -20,13 +20,17 @@
 				<input type="text" name="searchquery">
 				<input type="submit" value="Submit" name="Sök">
 			</form>
-			<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
-			<div class="itemcounter"><span>0</span></div>
+				<a href="?Controller/showCart">
+					<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
+				</a>
+				<?php
+					echo '<div class="itemcounter"><span>'.Controller::showCartItems().'</span></div>';
+				?>
 		</header>
 		<nav class="menu">
 		<ul>
 			<li><a class="button" href="../">Hem</a></li>
-			<li><a class="button" href="../butik/?Controller/getProducts">Butik</a></li>
+			<li><a class="button" href="?Controller/getProducts">Butik</a></li>
 			<li><a class="button" href="../omoss/">Om Oss</a></li>
 			<li><a class="button" href="../kontakt/">Kontakt</a></li>
 			<li><a class="button" href="../nyhetsbrev/">Nyhetsbrev</a></li>
@@ -46,8 +50,6 @@
 		<main>
 			<article class="produkt_area">
 			<?php 
-				error_reporting(E_ALL);
-				ini_set('display_errors', 1);
 				echo '<div class="produkt_area_header">
 					</div>
 					<div class="produkt_area_img">
@@ -65,7 +67,7 @@
 								<h2>'.$product[0] ['Pris'].':-</h2>
 							</li>
 							<li>
-								<a class="add_produkt" href=../index1.php?Controller/addToCart/'.$product[0] ['ID'].'>Lägg till i kundvagn</a>
+								<a class="add_produkt" href=./?Controller/addToCart/'.$product[0] ['ID'].'>Lägg till i kundvagn</a>
 								<form class="add_to_basket">
 									<button class="add_produkt" type="submit" value="Submit" name="buy">Lägg till Kundvagn</button>
 								</form>

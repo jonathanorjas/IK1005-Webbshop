@@ -1,3 +1,6 @@
+<?php
+	header('Content-Type: text/html; charset=ISO-8859-1');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +21,14 @@
 				<input type="submit" value="Submit" name="Sök">
 			</form>
 				<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
-				<div class="itemcounter"><span>0</span></div>
+				<?php
+					echo '<div class="itemcounter"><span>'.Controller::showCartItems().'</span></div>';
+				?>
 		</header>
 		<nav class="menu">
 		<ul>
 			<li><a class="button" href="../">Hem</a></li>
-			<li><a class="button" href="../butik/">Butik</a></li>
+			<li><a class="button" href="?Controller/getProducts">Butik</a></li>
 			<li><a class="button" href="../omoss/">Om Oss</a></li>
 			<li><a class="button" href="../kontakt/">Kontakt</a></li>
 			<li><a class="button" href="../nyhetsbrev/">Nyhetsbrev</a></li>
@@ -43,21 +48,61 @@
 				</div>
 				<ul class="sidebar-list">
 					<li><a href="">Namn</a></li>
+					<li><a href="">Kategori</a></li>
 					<li><a href="">Pris</a></li>
-					<li><a href="">Producent</a></li>
-					<li><a href="">Modell</a></li>
+					<li><a href="">Tillverkare</a></li>
 				</ul>	
 			</nav>
 			<article class="cart-menu">
 				<div class="message-header"><h1>Kundvagn</h1></div>
 				<div class="cart-contents">
 					<div class="cart-view">
-						<span>A very very veee<br>eee<br>eee<br>eee<br>eee<br>eee
-						<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee
-						<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee
-						<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eee<br>eeeeeery long text</span>
+						<?php
+							if($cartProductArray != NULL) {
+								foreach($cartProductArray as $cartProduct) {
+									echo '<div class="cart-product">
+										<div class="cart-product-info">
+											<a href=""><img class="cart-product-img" src="'.$cartProduct[0]['BildURL'].'" alt="'.$cartProduct[0]['Namn'].'"></a>
+											<ul>
+												<li class="cart-product-header">'.$cartProduct[0]['Namn'].'</li>
+												<li>'.$cartProduct[0]['Kategori'].'</li>
+												<li style="font-weight: bold;">'.$cartProduct[0]['Pris'].':-</li>
+											</ul>
+										</div>
+										<div class="cart-product-manage">
+											<h1 class="cart-product-header">Ta bort</h1><br>
+											<a class="compo-rund-knapp" style="display: block; margin: 0 auto; float: left;" href="?Controller/deleteAllFromCart/'.$cartProduct[0]['ID'].'">X</a>
+										</div>
+										<div class="cart-product-manage">
+											<h1 class="cart-product-header">Totalt</h1><br>
+											<div style="font-weight: bold;text-align: center;">'.$cartProduct[1]*$cartProduct[0]['Pris'].':-</div>
+										</div>
+										<div class="cart-product-manage">
+											<h1 class="cart-product-header">Antal</h1><br>
+											<a class="compo-rund-knapp" href="?Controller/deleteFromCart/'.$cartProduct[0]['ID'].'">-</a>
+											<span class="cart-product-amount">'.$cartProduct[1].'</span>
+											<a class="compo-rund-knapp" href="?Controller/addToCart/'.$cartProduct[0]['ID'].'">+</a>
+										</div>
+									</div>';
+								}
+							}
+							else {
+								echo '<h1>Din kundvagn är tom. Besök vår butiksida för att fylla den med godsaker!</h1>';
+							}
+						?>
 					</div>
 					<div class="cart-tab">
+						<?php
+						if($cartProductArray != NULL) {
+							$totalt = 0;
+							foreach($cartProductArray as $cartProduct)
+								$totalt += $cartProduct[1]*$cartProduct[0]['Pris'];
+							
+							echo '<span class="cart-product-header" style="text-align: none">Summa totalt: '.$totalt.' KR</span>';
+						}
+						else
+							echo '<span class="cart-product-header" style="text-align: none">Summa totalt: 0 KR</span>';
+						?>
 						<a class="compo-knapp" style="font-size:1.3em;float:right;" href="">Fortsätt till kassan</a>
 					</div>
 				</div>

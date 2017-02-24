@@ -27,7 +27,6 @@ display: block;
 	margin:0 auto;
 	max-width: 1200px;
 	min-height: 940px; 
-	overflow: auto;
 	background-color: #33aaff;
 }
 @media screen{
@@ -133,6 +132,21 @@ display: block;
 		float:left;
 	}
 	.compo-knapp:hover {
+		background-color:#66ccff;
+	}
+	.compo-rund-knapp {
+		display: inline-block;
+		min-width:20px;
+		min-height:20px;
+		color: #ffffff;
+		text-align: center;
+		margin:2px;
+		padding:2px;
+		background-color: #33aaff;
+		border-radius: 12px;
+		border: none;
+	}
+	.compo-rund-knapp:hover {
 		background-color:#66ccff;
 	}
 
@@ -766,15 +780,15 @@ display: block;
 		float:left;
 	}
 	.cart-contents {
-		width:95%;
+		width:100%;
 		min-height:400px;
+		max-height:400px;
 		height:100%;
 		margin:0 auto;
 	}
 	.cart-view {
 		width:100%;
 		height:460px;
-		padding:4px 8px;
 		overflow:auto;
 	}
 	.cart-tab {

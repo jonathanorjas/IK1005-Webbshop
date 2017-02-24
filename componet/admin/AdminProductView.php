@@ -28,8 +28,8 @@
 </head>
 <body>
 	<h1>Administration av Våra Produkter</h1>
-	<h2><a href="./index1.php?Controller/getProducts">Start Administrationsverktyg</a></h2>
-	<a href="./index1.php?Controller/addProductView/">Lägg till Produkter</a>
+	<h2><a href="?AdminController/getProductsAdminView">Start Administrationsverktyg</a></h2>
+	<a href="?AdminController/addProductView/">Lägg till Produkter</a>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -49,12 +49,12 @@
 				<td>'.$product['ID'].'</td>
 				<td><img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="100%" height="auto"></td>
 				<td>'.$product['Namn'].'</td>
-				<td><a href="./index1.php?Controller/getProductsbyCategory/'.$product['KategoriID'].'">'.$product['Kategori'].'</a></td>
-				<td><a href="./index1.php?Controller/getProductsbyManufacturer/'.$product['Tillverkare'].'">'.$product['Tillverkare'].'</a></td>
+				<td><a href="?AdminController/getProductsbyCategory/'.$product['KategoriID'].'">'.$product['Kategori'].'</a></td>
+				<td><a href="?AdminController/getProductsbyManufacturer/'.$product['Tillverkare'].'">'.$product['Tillverkare'].'</a></td>
 				<td>'.$product['Pris'].'</td>
 				<td>'.$product['LagerAntal'].'</td>
-				<td><a href="./index1.php?Controller/updateProductView/'.$product['ID'].'">Uppdatera</a></td>
-				<td><a href="./index1.php?Controller/deleteProduct/'.$product['ID'].'">Ta Bort</a></td>
+				<td><a href="?AdminController/updateProductView/'.$product['ID'].'">Uppdatera</a></td>
+				<td><a href="?AdminController/deleteProduct/'.$product['ID'].'">Ta Bort</a></td>
 				</tr>';
 			}
 		?>

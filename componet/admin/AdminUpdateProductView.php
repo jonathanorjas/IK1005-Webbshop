@@ -12,12 +12,12 @@
 	</style>
 </head>
 <body>
-<h2><a href="./index1.php?Controller/getProducts">Start Administrationsverktyg</a></h2>
-	<form action="./index1.php?Controller/updateProduct" method="post">
+<h2><a href="?AdminController/getProductsAdminView">Start Administrationsverktyg</a></h2>
+	<form action="?AdminController/updateProduct" method="post">
 		<h3>Produkt-ID</h3>
 		<?php
 		foreach ($products as $product) {
-		echo '<input type="text" name="id">';
+			echo '<input type="text" name="id">';
 		}
 		?>
 		<h3>Produktnamn:</h3>

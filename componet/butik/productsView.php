@@ -20,13 +20,17 @@
 				<input type="text" name="searchquery">
 				<input type="submit" value="Submit" name="Sök">
 			</form>
-				<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
-				<div class="itemcounter"><span>0</span></div>
+				<a href="?Controller/showCart">
+					<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
+				</a>
+				<?php
+					echo '<div class="itemcounter"><span>'.Controller::showCartItems().'</span></div>';
+				?>
 		</header>
 		<nav class="menu">
 		<ul>
 			<li><a class="button" href="../">Hem</a></li>
-			<li><a class="button" href="../butik/?Controller/getProducts">Butik</a></li>
+			<li><a class="button" href="?Controller/getProducts">Butik</a></li>
 			<li><a class="button" href="../omoss/">Om Oss</a></li>
 			<li><a class="button" href="../kontakt/">Kontakt</a></li>
 			<li><a class="button" href="../nyhetsbrev/">Nyhetsbrev</a></li>
@@ -46,7 +50,7 @@
 			<ul class="sidebar-list">
 				<?php	
 					foreach ($categories as $category) {
-						echo '<li><a href="./?Controller/getProductsbyCategory/'.$category['ID'].'">'.$category['Kategori'].'</a></li>';
+						echo '<li><a href="?Controller/getProductsbyCategory/'.$category['ID'].'">'.$category['Kategori'].'</a></li>';
 					}
 				?>
 			</ul>	
@@ -55,27 +59,26 @@
 			<ul>
 			<?php
 			foreach ($products as $product) {
-				
-			echo '
-			<li>
-				<article class="kategori_produkter">
-					<a href="./?Controller/getProductbyID/'.$product['ID'].'">
-						<div class="produkt_img_box">
-							<img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="50%" height="auto">
-						</div>
-						<div class="produkt_info">
-							<h2 class="produkt_name">'.$product['Namn'].'</h2>
-							<ul>
-								<li><span class="short_info">Grafikkort med GDDR5-minne</span></li>	
-							</ul>		
-						</div>
-						<div class="produkt_pris">
-							<span class="price_small">'.$product['Pris'].':-</span>
-						</div>
-					</a>
-				</article>
-			</li>
-			';
+				echo '
+				<li>
+					<article class="kategori_produkter">
+						<a href="?Controller/getProductsbyID/'.$product['ID'].'">
+							<div class="produkt_img_box">
+								<img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="50%" height="auto">
+							</div>
+							<div class="produkt_info">
+								<h2 class="produkt_name">'.$product['Namn'].'</h2>
+								<ul>
+									<li><span class="short_info">Grafikkort med GDDR5-minne</span></li>	
+								</ul>		
+							</div>
+							<div class="produkt_pris">
+								<span class="price_small">'.$product['Pris'].':-</span>
+							</div>
+						</a>
+					</article>
+				</li>
+				';
 			}
 			?>
 			</ul>

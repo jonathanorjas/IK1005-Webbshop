@@ -1,8 +1,10 @@
 <?php
-/* Error debugging
+// Error Debugging
+/*
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 */
+
 class View{
 		
 	private $productArray; // vår array innehållandes data
@@ -15,9 +17,8 @@ class View{
 			$this->productArray[$key]=$value;
 		}
 		else{
-			throw  new Exception('Nyckeln är upptagen!');
+			throw new Exception('Nyckeln är upptagen!');
 		}
-			
 	}
 
 	public function display(string $template){
