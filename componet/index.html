@@ -12,17 +12,23 @@
 <body>
 	<div class="container">
 		<header>
-			<a href="../componet/">
+			<div class="logodiv">
+			<a href="../componet/" >
 				<img src="../componet/images/ComponetLogoX120.png" alt="componet">
 			</a>
-			<form class="search_bar">
+			</div>
+			<div class="headerdiv">
+			<img src="../componet/images/trygg_e-handel.png" alt="Trygg ehandel" class="logo_trygg_ehandel">
+			
+			<form class="search_bar" >
 				<input type="text" name="searchquery">
 				<input type="submit" value="Submit" name="Sök">
 			</form>
 				<a href="index1.php/?Controller/showCart">
 					<img class="cart" src="../componet/images/shoppingcart-icon.png" alt="cart">
 				</a>
-				<div class="itemcounter"><span>0</span></div>
+				<div class="itemcounter" ><span>0</span></div>
+			</div>
 		</header>
 		<nav class="menu">
 		<ul>
@@ -30,7 +36,7 @@
 				<a href="#" class="dropbtn">=</a>
 					<div class="dropdown-content">
 					  		<a href="../componet/">Hem</a>
-							<a href="?Controller/getProducts">Butik</a>
+							<a href="index1.php/?Controller/getProducts">Butik</a>
 							<a href="../componet/omoss/">Om Oss</a>
 							<a href="../componet/kontakt/">Kontakt</a>
 							<a href="../componet/nyhetsbrev/">Nyhetsbrev</a>
@@ -38,7 +44,7 @@
 					</div>
 			</li>
 			<li><a class="button" href="../componet/">Hem</a></li>
-			<li><a class="button" href="?Controller/getProducts">Butik</a></li>
+			<li><a class="button" href="index1.php/?Controller/getProducts">Butik</a></li>
 			<li><a class="button" href="../componet/omoss/">Om Oss</a></li>
 			<li><a class="button" href="../componet/kontakt/">Kontakt</a></li>
 			<li><a class="button" href="../componet/nyhetsbrev/">Nyhetsbrev</a></li>
@@ -124,17 +130,19 @@
 			</article>
 		</main>
 		<footer>
+			<div class="footerpicture_div">
+			<img src="../componet/images/live-support-girl.png" alt="Customer service" class="happygirl_picture">
+			</div>
 			<div class="footer_information">
-				<h3>Kundtjänst</h3>
-				<ul>					
+				<h3 class="hej">Kundtjänst</h3>
+				<ul>						
 					<li><a href="">Kundservice</a></li>
 					<li><a href="">Support</a></li>
-					<li><a href="">Returer</a></li>
+					<li><a href="index1.php/?Controller/showAdminView">Logga in</a></li>
 					<li><a href="mailto:webmaster@componet.com">Webmaster</a></li>
 				</ul>
 			</div>
 			<div class="footer_logotypes">
-				<img src="../componet/images/trygg_e-handel.png" alt="Trygg ehandel" class="logo_trygg_ehandel">
 				<img src="../componet/images/leverantor.png" alt="leverantor" class="logo_leverantor">
 			</div>	
 		</footer>	

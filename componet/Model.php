@@ -1,8 +1,13 @@
 <?php
 /*
+Model innehåller alla funktioner för att hämta data från databasen och sedan ge tillbaka det till Controllern som begärde data
+*/
+
+/*
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 */
+
 class Model {
 	
     public function getProducts(): array {

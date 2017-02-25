@@ -69,7 +69,7 @@
 							<div class="produkt_info">
 								<h2 class="produkt_name">'.$product['Namn'].'</h2>
 								<ul>
-									<li><span class="short_info">Grafikkort med GDDR5-minne</span></li>	
+									<li><span class="short_info">'.$product['Beskrivning'].'</span></li>	
 								</ul>		
 							</div>
 							<div class="produkt_pris">

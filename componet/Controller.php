@@ -1,4 +1,12 @@
 <?php
+/*
+Controllern innehåller större delen av kod och kontrollerar vad som händer på sidan genom funktion åtkallningar
+*/
+
+/*
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+*/
 
 // Inkludera 
 include_once('./Model.php');
@@ -142,10 +150,6 @@ class Controller {
 			$this->view->assign('cartProductArray',$cartProductArray);
 			$this->view->display('./kundvagn/cartView.php');
 			
-            //$this->view->display('CartView.php', array('unikaID' => $this->unikaID,
-            //   'productArray' => $cartProductArray,
-            //   'attBetala' => $this->toPay())
-			
         } else {
 			$this->view->assign('cartProductArray',$cartProductArray);
             $this->view->display('./kundvagn/cartView.php');
@@ -175,9 +179,20 @@ class Controller {
     }
 	
 	
-	/* Admin kontroller */
+	/* Login för Admin */
 	
-	
+	// Kollar om aktiv admin session är igång, om inte så laddas loginsidan
+	public function showAdminView() {
+        if (isset($_SESSION['loggedin'])) {        	
+			//om inloggad visa adminvyn 
+			$productArray=$this->model->getProducts();
+			$this->view->assign('products',$productArray);
+			$this->view->display('./admin/AdminProductView.php');
+        } else {
+            //annars skickas vi till login
+            header("Location: ../login/loginView.php");
+        }
+    }
 	
 }
 

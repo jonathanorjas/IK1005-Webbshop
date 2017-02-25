@@ -24,10 +24,11 @@ display: block;
 
 /*Container för webbplats*/
 .container{
-	order: 1;
+	
 	margin:0 auto;
 	max-width: 1200px;
-	min-height: 940px; 
+	min-height: 940px;
+	height:auto;
 	background-color: #33aaff;
 }
 @media screen{
@@ -56,10 +57,8 @@ display: block;
 		min-height:20px;
 	}
 	body {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-content: flex-start;
+		display:flex;
+		flex-wrap:wrap;
 		background-image:url('../images/carbonfiber.jpg');
 		background-repeat: repeat;
 		/*background-attachment:fixed;
@@ -164,14 +163,14 @@ display: block;
 		width:40px;
 		height:20px;
 		padding:0 5px;
-		margin-top:20px;
-		margin-right:10px;
+		margin-top:3%;
+		margin-right:2%;
 		border-radius: 10px;
 		float:right;
 	}
 	.cart {
-		margin-top:10px;
-		margin-right:15px;
+		margin-top:2%;
+		margin-right:3%;
 		float:right;
 	}
 
@@ -185,6 +184,13 @@ display: block;
 	}
 	/*Header Stopp*/
 	/*Meny Start*/
+	.headerdiv {
+		float:right;
+		width:40%;
+		
+		
+		
+	}
 	.menu{
 		width: 100%;
 		min-height: 40px;
@@ -274,8 +280,13 @@ display: block;
 	/*Meny Stopp*/
 	.search_bar{
 		float: right;
-		margin-top: 20px;
-		margin-right: 20px;
+		margin-top: 3%;
+		margin-right: 3%;
+	}
+	.logodiv {
+		float:left;
+		width:50%;
+		height:100%;
 	}
 
 	.breadcrums{
@@ -508,6 +519,23 @@ display: block;
 		margin-left: 2.5%;
 		
 	}
+	.footerpicture_div {
+		float:right;
+		width:10%;
+		height:100%;
+		margin-right:4%;
+		margin-top:10px;
+	}
+	
+	.happygirl_picture{
+		float:left;
+		width:100%;
+		height:auto;
+		
+	}
+	.footer_information{
+		float:right;
+	}
 	.footer_information ul{
 		margin-left: 5px;
 	}
@@ -527,10 +555,12 @@ display: block;
 		margin-left: 5%;
 	}
 	.logo_trygg_ehandel{
-		width: 45%;
+		width:10%;
 		max-width: 100px;
+		margin-right:1%;
+		margin-top:1%;
 		height: auto;
-		float: left;
+		float: right;
 	}
 	/*Footer stopp*/
 
@@ -872,7 +902,7 @@ display: block;
 	 }
  	header{
 		height: 80px;
-		background-image: none;
+		background-image:url('../images/brushedmetal.jpg');
 	}
 	header img{
 		width: 200px;
@@ -887,10 +917,18 @@ display: block;
 		display: inline-block;
 	}
 	.cart{
-		display: none;
+		margin-top:8px;
+		
+		max-width:40px;
+		width:30%;
+		height:auto;
+		float:right;
 	}
 	.itemcounter{
-		display: none;
+		margin-top:16px;
+		float:right;
+		width:6%;
+		height:auto;
 	}
 	.kampanj-produkter{
 		
@@ -912,21 +950,58 @@ display: block;
 	.kampanj-pris{
 		
 	}
-	.footer_information{
-		clear: both;
-		width: 30%
-	}
-	.footer_logotypes{
-		width: 50%;
-		margin-left: 5%;
-	}
+	
 	.logo_leverantor{
 		width: 70%;
 		height: auto;
 	}
 	.logo_trygg_ehandel{
-		width: 25%;
+		width:20%;
+		max-width:40px;
+		margin-top:8px;
+		
+		float:right;
 		height: auto;
+	}
+	.headerdiv {
+		width:50%;
+		height:100%;
+		float:right;
+		
+	}
+	.logodiv {
+		width:50%;
+		height:100%;
+		float:left;
+	}
+	.footerpicture_div {
+		display:none;
+		float:right;
+		width:20%;
+		height:100%;
+		
+		
+	}
+	
+	.happygirl_picture{
+		float:left;
+		width:100%;
+		height:auto;
+		
+	}
+	.footer_information{
+		margin-top:2%;
+		margin-bottom:2%;
+		width:20%;
+		float:left;
+		
+		
+	}
+	
+	.footer_logotypes{
+		float:right;
+		width: 60%;
+		height:auto;
 	}
 }
 @media screen and (max-width:550px) {

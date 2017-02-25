@@ -29,6 +29,41 @@ class AdminController {
 	
 	/* Admin kontroller */
 	
+	// Login funktion
+	public function login($loggedin) {
+        
+		if($_POST['username']=='admin' && $_POST['password']=='1234') {
+        //if ($loggedin=='TRUE') {
+            $_SESSION['loggedin'] = TRUE; 
+			
+            //GÃ¥ till admin sidan
+            $this->getProductsAdminView();
+        }        
+        if($loggedin=='loggedout'){
+			$_SESSION['loggedin']==FALSE;
+			unset($_SESSION['loggedin']);
+			
+			// GÃ¥ till logout skripten
+			header("Location: ./index.html");
+				
+		}
+		if($loggedin=="FALSE"){
+	        
+	        $_SESSION['loggedin']==FALSE;
+	        unset($_SESSION['loggedin']);
+			
+	        //Visar login sidan
+	        header("Location: ./login/loginView.php");     
+        }
+    }
+    
+	// Logout
+    public function logout() {
+        unset($_SESSION['loggedin']);
+        $this->view->display('./admin/AdminProductView.php');
+    }
+
+	
 	public function getProductsAdminView() {
 		$productArray=$this->model->getProducts();
 		$this->view->assign('products',$productArray);

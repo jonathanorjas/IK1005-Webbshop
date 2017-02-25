@@ -68,9 +68,7 @@
 							</li>
 							<li>
 								<a class="add_produkt" href=./?Controller/addToCart/'.$product[0] ['ID'].'>Lägg till i kundvagn</a>
-								<form class="add_to_basket">
-									<button class="add_produkt" type="submit" value="Submit" name="buy">Lägg till Kundvagn</button>
-								</form>
+								
 							</li>
 						</ul>
 					</div>';
