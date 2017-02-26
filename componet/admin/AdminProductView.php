@@ -28,7 +28,9 @@
 </head>
 <body>
 	<h1>Administration av Våra Produkter</h1>
+	<br>
 	<h2><a href="?AdminController/getProductsAdminView">Start Administrationsverktyg</a></h2>
+	<br>
 	<a href="?AdminController/addProductView/">Lägg till Produkter</a>
 	<table>
 		<tr>
