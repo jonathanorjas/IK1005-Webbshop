@@ -1,5 +1,5 @@
 <?php
-	header('Content-Type: text/html; charset=ISO-8859-1');
+	header('Content-Type: text/html; charset=utf8');
 ?>
 <!DOCTYPE html>
 <html>

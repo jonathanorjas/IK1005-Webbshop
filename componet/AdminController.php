@@ -39,7 +39,7 @@ class AdminController {
             $_SESSION['loggedin'] = TRUE; 
 			
             //Gå till admin sidan
-            $this->getProductsAdminView();
+            header('Location: ?AdminController/getProductsAdminView');
         }
 		else{
 			// Ge meddelande om felaktiga uppgifter och ladda om sidan

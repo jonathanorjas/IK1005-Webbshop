@@ -1,11 +1,11 @@
 <?php
+	header('Content-Type: text/html; charset=utf-8');
 	if($_SESSION['loggedin'] != true){
 		header("Location: ../");
 	}
-	header('Content-Type: text/html; charset=ISO-8859-1');
 ?>
 <!DOCTYPE html>
-<html lang="sv-se">
+<html lang="sv">
 <head>
 	<title></title>
 	<meta name="robots" content="noindex, nofollow">

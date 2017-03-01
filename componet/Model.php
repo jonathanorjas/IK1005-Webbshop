@@ -121,8 +121,9 @@ class Model {
         $dsn = 'mysql:host=utb-mysql.du.se;dbname=db30';
 		$username = 'db30';
 		$password = 'FJJAcyMU';
+		$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
         
-		$pdocon = new PDO($dsn, $username, $password);
+		$pdocon = new PDO($dsn, $username, $password, $options);
 		
 		return $pdocon;
 		}
