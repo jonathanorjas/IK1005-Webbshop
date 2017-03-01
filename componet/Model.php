@@ -84,8 +84,7 @@ class Model {
 		try {
 		$pdocon = $this->ConnectPDO();
 		
-		$pdoStatement = $pdocon->prepare("CALL h14viwib_getProductsbyManufacturer'{$manufacture_string}')");
-		
+		$pdoStatement = $pdocon->prepare("CALL h14viwib_getProductsbyManufacturer('{$manufacture_string}')");
 		$pdoStatement->execute();
 		$productsbyManufacturer = $pdoStatement->fetchAll();
 		$pdocon = NULL;

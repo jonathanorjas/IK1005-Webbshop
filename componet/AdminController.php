@@ -60,7 +60,7 @@ class AdminController {
 	// Logout
     public function logout() {
         unset($_SESSION['loggedin']);
-        $this->view->display('./admin/AdminProductView.php');
+        header("Location: ./index.html");
     }
 
 	
@@ -118,7 +118,7 @@ class AdminController {
 	}
 
 	public function getProductsbyManufacturer($manufacturer){
-		$$productVar=$this->model->getProductsbyManufacturer($manufacturer);
+		$productVar=$this->model->getProductsbyManufacturer($manufacturer);
 		$this->view->assign('products',$productVar);
 		$this->view->display('./admin/AdminProductView.php');
 	}
