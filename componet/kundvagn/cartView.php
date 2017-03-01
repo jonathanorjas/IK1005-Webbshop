@@ -75,7 +75,7 @@
 										</div>
 										<div class="cart-product-manage">
 											<h1 class="cart-product-header">Totalt</h1><br>
-											<div style="font-weight: bold;text-align: center;">'.$cartProduct[1]*$cartProduct[0]['Pris'].':-</div>
+											<div style="font-weight: bold;text-align: center;">'.number_format($cartProduct[1]*$cartProduct[0]['Pris'],2).':-</div>
 										</div>
 										<div class="cart-product-manage">
 											<h1 class="cart-product-header">Antal</h1><br>
@@ -98,10 +98,10 @@
 							foreach($cartProductArray as $cartProduct)
 								$totalt += $cartProduct[1]*$cartProduct[0]['Pris'];
 							
-							echo '<span class="cart-product-header" style="text-align: none">Summa totalt: '.$totalt.' KR</span>';
+							echo '<span class="cart-product-header" style="text-align: none">Summa totalt: '.number_format($totalt,2).' KR</span>';
 						}
 						else
-							echo '<span class="cart-product-header" style="text-align: none">Summa totalt: 0 KR</span>';
+							echo '<span class="cart-product-header" style="text-align: none">Summa totalt: 0.00 KR</span>';
 						?>
 						<a class="compo-knapp" style="font-size:1.3em;float:right;" href="">Fortsätt till kassan</a>
 					</div>

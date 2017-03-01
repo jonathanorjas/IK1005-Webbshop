@@ -106,7 +106,7 @@ class Controller {
             // förnya vår session
             $_SESSION['cart'] = $this->cart;
         }
-        $this->showCart();
+        header("Location: ?Controller/showCart");
     }
 	
 	// Ta bort en produkt från kundvagn med detta ID
@@ -123,7 +123,7 @@ class Controller {
             }
             $_SESSION['cart'] = $this->cart;
 			
-            $this->showCart();
+            header("Location: ?Controller/showCart");
         }
     }
 	
@@ -138,7 +138,7 @@ class Controller {
 
             $_SESSION['cart'] = $this->cart;
 			
-            $this->showCart();
+            header("Location: ?Controller/showCart");
         }
     }
 	
