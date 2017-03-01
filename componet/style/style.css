@@ -199,6 +199,18 @@ display: block;
 		text-align: center;
 		float:left;
 	}
+	
+	.admininfo{
+	
+	text-align:center;
+    justify-content:center;
+	display:flex;
+	
+	margin-top:2%;
+	
+		
+		
+	}
 	.menu ul {
 		display: flex;
 		align-items: baseline;
