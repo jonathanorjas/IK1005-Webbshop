@@ -13,17 +13,25 @@
 <body>
 	<div class="container">
 		<header>
-			<a href="../">
+			<div class="logodiv">
+			<a href="../" >
 				<img src="../images/ComponetLogoX120.png" alt="componet">
 			</a>
-			<form class="search_bar">
+			</div>
+			<div class="headerdiv">
+			<img src="../images/trygg_e-handel.png" alt="Trygg ehandel" class="logo_trygg_ehandel">
+			
+			<form class="search_bar" >
 				<input type="text" name="searchquery">
 				<input type="submit" value="Submit" name="Sök">
 			</form>
-				<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
+				<a href="../index1.php/?Controller/showCart">
+					<img class="cart" src="../images/shoppingcart-icon.png" alt="cart">
+				</a>
 				<?php
 					echo '<div class="itemcounter"><span>'.Controller::showCartItems().'</span></div>';
 				?>
+			</div>
 		</header>
 		<nav class="menu">
 		<ul>
@@ -118,31 +126,38 @@
 					</div>
 				</div>
 			</article>
-		</main>
 		<footer>
-			<div class="footer_logotypes">
-				<img src="../images/trygg_e-handel.png" alt="Trygg ehandel" class="logo_trygg_ehandel">
-				<ul style="margin-left: 10px;">
-					<li><img src="../images/visa-icon.png" alt="Visa"></li>
-					<li><img src="../images/mastercard-icon.png" alt="Mastercard"></li>
-				</ul>
-				<ul>
-					<li><img src="../images/paypal-icon.png" alt="Paypal"></li>
-					<li style="margin-left: 6px; margin-top: 15px;"><img src="../images/klarna_logo.png" alt="Klarna"></li>
-				</ul>
-				<ul>
-					<li style="margin-top:10px;"><img src="../images/dhl-shipping-box-icon.png" alt="DHL"></li>
-					<li style="margin-top:20px;"><img src="../images/posten_logo.png" alt="Posten"></li>
-				</ul>
+			<div class="footerpicture_div">
+			<img src="../images/live-support-girl.png" alt="Customer service" class="happygirl_picture">
 			</div>
 			<div class="footer_information">
-				<h3>Kundtjänst</h3>
-				<ul>					
+				<h3 class="hej">Kundtjänst</h3>
+				<ul>						
 					<li><a href="">Kundservice</a></li>
 					<li><a href="">Support</a></li>
-					<li><a href="">Returer</a></li>
+					<li><a href="../index1.php/?Controller/showAdminView">Logga in</a></li>
 					<li><a href="mailto:webmaster@componet.com">Webmaster</a></li>
 				</ul>
+			</div>
+			<div class="footer_logotypes">
+				<img src="../images/leverantor.png" alt="leverantor" class="logo_leverantor">
+			</div>	
+		</footer></main>
+		<footer>
+			<div class="footerpicture_div">
+			<img src="../images/live-support-girl.png" alt="Customer service" class="happygirl_picture">
+			</div>
+			<div class="footer_information">
+				<h3 class="hej">Kundtjänst</h3>
+				<ul>						
+					<li><a href="">Kundservice</a></li>
+					<li><a href="">Support</a></li>
+					<li><a href="../index1.php/?Controller/showAdminView">Logga in</a></li>
+					<li><a href="mailto:webmaster@componet.com">Webmaster</a></li>
+				</ul>
+			</div>
+			<div class="footer_logotypes">
+				<img src="../images/leverantor.png" alt="leverantor" class="logo_leverantor">
 			</div>	
 		</footer>	
 	</div>
