@@ -29,8 +29,19 @@
 		</header>
 		<nav class="menu">
 		<ul>
+			<li class="dropdown">
+				<a href="#" class="dropbtn">=</a>
+					<div class="dropdown-content">
+					  		<a href="../">Hem</a>
+							<a href="../index1.php?/Controller/getProducts">Butik</a>
+							<a href="../omoss/">Om Oss</a>
+							<a href="../kontakt/">Kontakt</a>
+							<a href="../nyhetsbrev/">Nyhetsbrev</a>
+						
+					</div>
+			</li>
 			<li><a class="button" href="../">Hem</a></li>
-			<li><a class="button" href="?Controller/getProducts">Butik</a></li>
+			<li><a class="button" href="../index1.php/?Controller/getProducts">Butik</a></li>
 			<li><a class="button" href="../omoss/">Om Oss</a></li>
 			<li><a class="button" href="../kontakt/">Kontakt</a></li>
 			<li><a class="button" href="../nyhetsbrev/">Nyhetsbrev</a></li>
