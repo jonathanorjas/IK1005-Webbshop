@@ -39,7 +39,7 @@
 				<a href="#" class="dropbtn">=</a>
 					<div class="dropdown-content">
 					  		<a href="../">Hem</a>
-							<a href="../index1.php?/Controller/getProducts">Butik</a>
+							<a href="../index1.php/?Controller/getProducts">Butik</a>
 							<a href="../omoss/">Om Oss</a>
 							<a href="../kontakt/">Kontakt</a>
 							<a href="../nyhetsbrev/">Nyhetsbrev</a>
@@ -57,9 +57,9 @@
 			<ul>
 				<li><a href="../">Start</a></li>
 				<li>></li>
-				<li><a href="./?Controller/getProducts">Butik</a></li>
+				<li><a href="../index1.php/?Controller/getProducts">Butik</a></li>
 				<li>></li>
-				<li><?php echo '<a href="./?Controller/getProductsbyCategory/'.$product[0] ['KategoriID'].'">'.$product[0] ['Kategori'].'</a>'?></li>
+				<li><?php echo '<a href="../index1.php/?Controller/getProductsbyCategory/'.$product[0] ['KategoriID'].'">'.$product[0] ['Kategori'].'</a>'?></li>
 				<li>></li>
 				<li><?php echo $product[0] ['Namn'];?></li>
 			</ul>			

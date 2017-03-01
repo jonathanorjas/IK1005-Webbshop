@@ -13,12 +13,12 @@
 	<meta charset="utf-8">
 	<style>
 		
+		.container{
+			background-color: #ffffff;
+		}
 		table{
-			margin-top:2%;
-			margin-left: auto;
-			margin-right: auto;
-			width: 800px;
-			
+			min-width: 1000px;
+		}	
 		}
 		h1{
 			text-align: center;
@@ -26,6 +26,7 @@
 		td{
 			border: 1px solid black;
 			vertical-align:top;
+			text-align: center;
 			
 		}
 	</style>
@@ -63,13 +64,11 @@
 			<li>Admin</li>
 		</ul>
 	</nav>
-	<h1>Administration av VÃ¥ra Produkter</h1>
+	<h1>Administration av Våra Produkter</h1>
 		<div class="admininfo"> 
-		
-		
-		<button class="hemadmin", onclick="window.location.href='?AdminController/getProductsAdminView'"><h3>Start Admin</h3></button>
-		<button class="add", onclick="window.location.href='?AdminController/addProductView/'"> <h3>LÃ¤gg till Produkt</h3></button>
-		<button class="logout", onclick="window.location.href='?AdminController/logout'"> <h3>Logga ut</h3></button>
+		<button class="hemadmin", onclick="window.location.href='../index1.php/?AdminController/getProductsAdminView'"><h3>Start Admin</h3></button>
+		<button class="add", onclick="window.location.href='../index1.php/?AdminController/addProductView/'"><h3>Lägg till Produkt</h3></button>
+		<button class="logout", onclick="window.location.href='../index1.php/?AdminController/logout'"><h3>Logga ut</h3></button>
 		</div>
 		<table>
 			<tr>
@@ -88,34 +87,23 @@
 					echo '
 					<tr>
 					<td>'.$product['ID'].'</td>
-					<td><img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="100%" height="auto"></td>
+					<td><img src="'.$product['BildURL'].'" alt="'.$product['Namn'].'" width="150px" height="auto"></td>
 					<td>'.$product['Namn'].'</td>
-					<td><a href="?AdminController/getProductsbyCategory/'.$product['KategoriID'].'">'.$product['Kategori'].'</a></td>
-					<td><a href="?AdminController/getProductsbyManufacturer/'.$product['Tillverkare'].'">'.$product['Tillverkare'].'</a></td>
-					<td>'.$product['Pris'].'</td>
-					<td>'.$product['LagerAntal'].'</td>
-					<td><a href="?AdminController/updateProductView/'.$product['ID'].'">Uppdatera</a></td>
-					<td><a href="?AdminController/deleteProduct/'.$product['ID'].'">Ta Bort</a></td>
+					<td><button onclick=window.location.href="../index1.php/?AdminController/getProductsbyCategory/'.$product['KategoriID'].'">'.$product['Kategori'].'</button></td>
+					<td><button onclick=window.location.href="../index1.php/?AdminController/getProductsbyManufacturer/'.$product['Tillverkare'].'">'.$product['Tillverkare'].'</button></td>
+					<td>'.$product['Pris'].' SEK</td>
+					<td>'.$product['LagerAntal'].' st</td>
+					<td><button onclick=window.location.href="../index1.php/?AdminController/updateProductView/'.$product['ID'].'">Uppdatera</button></td>
+					<td><button onclick=window.location.href="../index1.php/?AdminController/deleteProduct/'.$product['ID'].'">Ta Bort</button></td>
 					</tr>';
 				}
 			?>
 		</table>
+		<br>
+		<br>
+		<br>
+		<br>
 		<footer>
-			<div class="footerpicture_div">
-			<img src="../images/live-support-girl.png" alt="Customer service" class="happygirl_picture">
-			</div>
-			<div class="footer_information">
-				<h3 class="hej">KundtjÃ¤nst</h3>
-				<ul>						
-					<li><a href="">Kundservice</a></li>
-					<li><a href="">Support</a></li>
-					<li><a href="index1.php/?Controller/showAdminView">Logga in</a></li>
-					<li><a href="mailto:webmaster@componet.com">Webmaster</a></li>
-				</ul>
-			</div>
-			<div class="footer_logotypes">
-				<img src="../images/leverantor.png" alt="leverantor" class="logo_leverantor">
-			</div>	
 		</footer>
 		</div>
 	</body>

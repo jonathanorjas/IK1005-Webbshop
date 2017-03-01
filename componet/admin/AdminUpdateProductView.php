@@ -15,7 +15,7 @@
 	</style>
 </head>
 <body>
-<h2><a href="?AdminController/getProductsAdminView">Start Administrationsverktyg</a></h2>
+<h2><a href="./?AdminController/getProductsAdminView">Start Administrationsverktyg</a></h2>
 	<form action="./?AdminController/updateProduct" method="post">
 		<?php
 			foreach ($products as $product) {

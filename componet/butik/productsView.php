@@ -57,7 +57,7 @@
 			<ul>
 				<li><a href="../">Start</a></li>
 				<li>></li>
-				<li><a href="../butik/?Controller/getProducts">Butik</a></li>
+				<li><a href="../index1.php/?Controller/getProducts">Butik</a></li>
 			</ul>
 		</nav>
 		<nav class="sidebar">
