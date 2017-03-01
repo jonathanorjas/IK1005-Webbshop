@@ -81,6 +81,9 @@
 								<p>'.$product[0] ['Beskrivning'].'</p>
 							</li>
 							<li>
+								<h3>I Lager: '.$product[0] ['LagerAntal'].' st</h3>
+							</li>
+							<li>
 								<h2>'.$product[0] ['Pris'].':-</h2>
 							</li>
 							<li>
