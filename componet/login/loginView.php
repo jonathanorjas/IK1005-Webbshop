@@ -52,7 +52,9 @@
 				<fieldset>
 				
 					<legend>Logga in för att komma åt administrations verktyg</legend><br><br>
-					<span style="color:red;float:left;">{{felmeddelande}}</span>
+					<?php
+						echo '<span style="color:red;float:left;">'.$loginMessage.'</span>';
+					?>
 					<br><br>
 					
 					<div style="float:left;">
@@ -63,7 +65,7 @@
 					
 					<div style="float:left;">
 						<label>Password: </label>
-						<input type="text" name="password" value="">
+						<input type="password" name="password" value="">
 					</div>
 					<br><br><br><br>
 								  

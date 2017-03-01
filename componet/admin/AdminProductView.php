@@ -1,4 +1,7 @@
 <?php
+	if($_SESSION['loggedin'] != true){
+		header("Location: ../");
+	}
 	header('Content-Type: text/html; charset=ISO-8859-1');
 ?>
 <!DOCTYPE html>
